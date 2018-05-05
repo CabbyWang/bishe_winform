@@ -107,5 +107,24 @@ namespace ClinicSystem
             string sql = "insert into registation(ID_number, menzhenbianhao, fufeileixing, department, guahaojine, doctor, yingshoujine, guahaojibie, yiliaozhenghao) values('" + Base.getTextFrom(txt_ID_number2) + "', '" + Base.getTextFrom(txt_menzhenbianhao) + "', '" + cb_fufeileixing.Text + "', '" + cb_department.Text + "', '" + txt_guahaojine.Text + "', '" + cb_doctor + "', '" + txt_yingshoujine.Text + "', '" + cb_guahaojibie.Text + "', " + Convert.ToInt32(txt_yiliaozhenghao2.Text) + ")";
             Base.sql_insert(sql);
         }
+
+        private void txt_ID_number_TextChanged(object sender, EventArgs e)
+        {
+            string txt = txt_ID_number.Text.ToString();
+            if (string.IsNullOrEmpty(txt)) {
+                return;
+            }
+            txt_yiliaozhenghao.Text = "";
+        }
+
+        private void txt_yiliaozhenghao_TextChanged(object sender, EventArgs e)
+        {
+            string txt = txt_yiliaozhenghao.Text.ToString();
+            if (string.IsNullOrEmpty(txt))
+            {
+                return;
+            }
+            txt_ID_number.Text = "";
+        }
     }
 }

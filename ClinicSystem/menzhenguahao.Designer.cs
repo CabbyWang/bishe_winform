@@ -46,6 +46,8 @@
             this.txt_menzhenbianhao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.jibenxinxigB = new System.Windows.Forms.GroupBox();
+            this.txt_yiliaozhenghao2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txt_contact = new System.Windows.Forms.TextBox();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.txt_age = new System.Windows.Forms.TextBox();
@@ -69,8 +71,6 @@
             this.txt_ID_number = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_yiliaozhenghao = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_yiliaozhenghao2 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.jibenxinxigB.SuspendLayout();
             this.SuspendLayout();
@@ -296,6 +296,23 @@
             this.jibenxinxigB.TabStop = false;
             this.jibenxinxigB.Text = "基本信息";
             // 
+            // txt_yiliaozhenghao2
+            // 
+            this.txt_yiliaozhenghao2.Enabled = false;
+            this.txt_yiliaozhenghao2.Location = new System.Drawing.Point(665, 171);
+            this.txt_yiliaozhenghao2.Name = "txt_yiliaozhenghao2";
+            this.txt_yiliaozhenghao2.Size = new System.Drawing.Size(100, 25);
+            this.txt_yiliaozhenghao2.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(587, 180);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "医疗证号";
+            // 
             // txt_contact
             // 
             this.txt_contact.Enabled = false;
@@ -504,6 +521,7 @@
             this.txt_ID_number.Name = "txt_ID_number";
             this.txt_ID_number.Size = new System.Drawing.Size(300, 25);
             this.txt_ID_number.TabIndex = 7;
+            this.txt_ID_number.TextChanged += new System.EventHandler(this.txt_ID_number_TextChanged);
             // 
             // label1
             // 
@@ -520,23 +538,7 @@
             this.txt_yiliaozhenghao.Name = "txt_yiliaozhenghao";
             this.txt_yiliaozhenghao.Size = new System.Drawing.Size(100, 25);
             this.txt_yiliaozhenghao.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(587, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "医疗证号";
-            // 
-            // txt_yiliaozhenghao2
-            // 
-            this.txt_yiliaozhenghao2.Enabled = false;
-            this.txt_yiliaozhenghao2.Location = new System.Drawing.Point(665, 171);
-            this.txt_yiliaozhenghao2.Name = "txt_yiliaozhenghao2";
-            this.txt_yiliaozhenghao2.Size = new System.Drawing.Size(100, 25);
-            this.txt_yiliaozhenghao2.TabIndex = 22;
+            this.txt_yiliaozhenghao.TextChanged += new System.EventHandler(this.txt_yiliaozhenghao_TextChanged);
             // 
             // menzhenguahao
             // 
