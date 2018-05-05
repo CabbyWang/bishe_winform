@@ -20,10 +20,17 @@ namespace ClinicSystem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            String contact = Base.getTextFrom(txt_contact);
+            // 检验联系方式
+            if (!Valid.IsContact(contact)) {
+                MessageBox.Show("请输入有效的联系方式!!");
+                txt_contact.Focus();
+                return;
+            }
+
             String username = Base.getTextFrom(txt_username);
             String realname = Base.getTextFrom(txt_realname);
             String address = Base.getTextFrom(txt_address);
-            String contact = Base.getTextFrom(txt_contact);
             String sex = Base.getTextFrom(cb_sex);
             String sql = "insert into users(username, realname, address, contact, sex) values('"+username+"', '"+realname+"', '"+address+"', '"+contact+"', '"+sex+"')";
             int a = Base.sql_insert(sql);

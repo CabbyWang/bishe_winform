@@ -21,6 +21,21 @@ namespace ClinicSystem
         private void btn_add_Click(object sender, EventArgs e)
         {
             String name = txt_name.Text.ToString().Trim();
+            // 检验医生姓名不为空
+            if (string.IsNullOrEmpty(name)) {
+                MessageBox.Show("医生姓名不能为空!!");
+                txt_name.Focus();
+                return;
+            }
+
+            // 检验身份证号
+            if (!Valid.IsPersonID(txt_ID_number.Text))
+            {
+                MessageBox.Show("请输入有效的身份证号!");
+                txt_ID_number.Focus();
+                return;
+            }
+
             String sex = cb_sex.Text.ToString().Trim();
             String department = cb_department.Text.ToString().Trim();
             String zhicheng = cb_zhicheng.Text.ToString().Trim();

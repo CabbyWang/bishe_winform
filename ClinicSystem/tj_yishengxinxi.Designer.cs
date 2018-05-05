@@ -173,9 +173,9 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("宋体", 10F);
-            this.btn_add.Location = new System.Drawing.Point(325, 301);
+            this.btn_add.Location = new System.Drawing.Point(303, 301);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(89, 34);
+            this.btn_add.Size = new System.Drawing.Size(111, 34);
             this.btn_add.TabIndex = 23;
             this.btn_add.Text = "确认添加";
             this.btn_add.UseVisualStyleBackColor = true;

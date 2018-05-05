@@ -20,11 +20,23 @@ namespace ClinicSystem
 
         private void 保存button_Click(object sender, EventArgs e)
         {
+            // 检验身份证号
+            if (!Valid.IsPersonID(txt_ID_number.Text)) {
+                MessageBox.Show("请输入有效的身份证号!");
+                txt_ID_number.Focus();
+                return;
+            }
             if (string.IsNullOrEmpty(txt_ID_number.Text))
             {
                 //身份证号码不能为空，如果为空返回
 
                 MessageBox.Show("身份证号码不能为空！");
+                return;
+            }
+            // 验证电话号码
+            if (!Valid.IsContact(txt_ID_number.Text)) {
+                MessageBox.Show("请输入有效的联系方式!");
+                txt_contact.Focus();
                 return;
             }
             //String id_number = txt_ID_number.Text.ToString().Trim();

@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace ClinicSystem.App_Code
 {
-    class Validate
+    public class Valid
     {
         /// <summary> 
         /// 判断是否是正确的身份证格式，只支持18位 
@@ -34,31 +34,31 @@ namespace ClinicSystem.App_Code
                     return false;
                 }
 
-                char[] code = str.ToString().ToArray();
-                //加权因子 
-                int[] factor = { 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 };
-                //校验位 
-                char[] parity = { '1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2' };
-                int sum = 0;
-                for (int i = 0; i < 17; i++)
-                {
-                    sum = Convert.ToInt32(code[i].ToString()) * factor[i];
-                }
-                char last = parity[sum % 11];
-                try
-                {
-                    if (last != char.ToUpper(code[17]))
-                    {
-                        return false;
-                    }
-                }
-                catch (Exception)
-                {
-                    if (last != code[17])
-                    {
-                        return false;
-                    }
-                }
+                //char[] code = str.ToString().ToArray();
+                ////加权因子 
+                //int[] factor = { 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 };
+                ////校验位 
+                //char[] parity = { '1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2' };
+                //int sum = 0;
+                //for (int i = 0; i < 17; i++)
+                //{
+                //    sum = Convert.ToInt32(code[i].ToString()) * factor[i];
+                //}
+                //char last = parity[sum % 11];
+                //try
+                //{
+                //    if (last != char.ToUpper(code[17]))
+                //    {
+                //        return false;
+                //    }
+                //}
+                //catch (Exception)
+                //{
+                //    if (last != code[17])
+                //    {
+                //        return false;
+                //    }
+                //}
             }
 
             return true;
