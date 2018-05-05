@@ -44,15 +44,7 @@
             this.labelshenfenzheng = new System.Windows.Forms.Label();
             this.txt_contact = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgv_yishengxinxi = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cb_sex = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.xingming = new System.Windows.Forms.Label();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.btn_search = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_realname = new System.Windows.Forms.TextBox();
+            this.dgv_yonghuxinxi = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,10 +53,18 @@
             this.realname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_realname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cb_sex = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.xingming = new System.Windows.Forms.Label();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_yishengxinxi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_yonghuxinxi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,7 +228,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgv_yishengxinxi);
+            this.groupBox2.Controls.Add(this.dgv_yonghuxinxi);
             this.groupBox2.Location = new System.Drawing.Point(-1, 81);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -236,13 +236,13 @@
             this.groupBox2.Size = new System.Drawing.Size(400, 430);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "医生信息";
+            this.groupBox2.Text = "用户信息";
             // 
-            // dgv_yishengxinxi
+            // dgv_yonghuxinxi
             // 
-            this.dgv_yishengxinxi.AllowUserToAddRows = false;
-            this.dgv_yishengxinxi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_yishengxinxi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_yonghuxinxi.AllowUserToAddRows = false;
+            this.dgv_yonghuxinxi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_yonghuxinxi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.username,
             this.password,
@@ -251,97 +251,15 @@
             this.realname,
             this.address,
             this.contact});
-            this.dgv_yishengxinxi.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgv_yishengxinxi.Location = new System.Drawing.Point(6, 18);
-            this.dgv_yishengxinxi.Margin = new System.Windows.Forms.Padding(4);
-            this.dgv_yishengxinxi.Name = "dgv_yishengxinxi";
-            this.dgv_yishengxinxi.ReadOnly = true;
-            this.dgv_yishengxinxi.RowTemplate.Height = 23;
-            this.dgv_yishengxinxi.Size = new System.Drawing.Size(394, 409);
-            this.dgv_yishengxinxi.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txt_realname);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cb_sex);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.xingming);
-            this.groupBox1.Controls.Add(this.txt_username);
-            this.groupBox1.Controls.Add(this.btn_search);
-            this.groupBox1.Location = new System.Drawing.Point(-1, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(909, 55);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "查找";
-            // 
-            // cb_sex
-            // 
-            this.cb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_sex.FormattingEnabled = true;
-            this.cb_sex.Location = new System.Drawing.Point(516, 21);
-            this.cb_sex.Name = "cb_sex";
-            this.cb_sex.Size = new System.Drawing.Size(72, 23);
-            this.cb_sex.TabIndex = 208;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(463, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
-            this.label1.TabIndex = 205;
-            this.label1.Text = "性别";
-            // 
-            // xingming
-            // 
-            this.xingming.AutoSize = true;
-            this.xingming.Location = new System.Drawing.Point(20, 24);
-            this.xingming.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xingming.Name = "xingming";
-            this.xingming.Size = new System.Drawing.Size(52, 15);
-            this.xingming.TabIndex = 101;
-            this.xingming.Text = "用户名";
-            // 
-            // txt_username
-            // 
-            this.txt_username.Location = new System.Drawing.Point(81, 19);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(132, 25);
-            this.txt_username.TabIndex = 201;
-            // 
-            // btn_search
-            // 
-            this.btn_search.Location = new System.Drawing.Point(651, 18);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(100, 29);
-            this.btn_search.TabIndex = 11;
-            this.btn_search.Text = "查找";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 24);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 209;
-            this.label2.Text = "姓名";
-            // 
-            // txt_realname
-            // 
-            this.txt_realname.Location = new System.Drawing.Point(301, 19);
-            this.txt_realname.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_realname.Name = "txt_realname";
-            this.txt_realname.Size = new System.Drawing.Size(132, 25);
-            this.txt_realname.TabIndex = 210;
+            this.dgv_yonghuxinxi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgv_yonghuxinxi.Location = new System.Drawing.Point(6, 18);
+            this.dgv_yonghuxinxi.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_yonghuxinxi.Name = "dgv_yonghuxinxi";
+            this.dgv_yonghuxinxi.ReadOnly = true;
+            this.dgv_yonghuxinxi.RowTemplate.Height = 23;
+            this.dgv_yonghuxinxi.Size = new System.Drawing.Size(394, 409);
+            this.dgv_yonghuxinxi.TabIndex = 0;
+            this.dgv_yonghuxinxi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_yishengxinxi_CellDoubleClick);
             // 
             // id
             // 
@@ -403,6 +321,89 @@
             this.contact.Name = "contact";
             this.contact.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_realname);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cb_sex);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.xingming);
+            this.groupBox1.Controls.Add(this.txt_username);
+            this.groupBox1.Controls.Add(this.btn_search);
+            this.groupBox1.Location = new System.Drawing.Point(-1, 18);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(909, 55);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "查找";
+            // 
+            // txt_realname
+            // 
+            this.txt_realname.Location = new System.Drawing.Point(301, 19);
+            this.txt_realname.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_realname.Name = "txt_realname";
+            this.txt_realname.Size = new System.Drawing.Size(132, 25);
+            this.txt_realname.TabIndex = 210;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(248, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.TabIndex = 209;
+            this.label2.Text = "姓名";
+            // 
+            // cb_sex
+            // 
+            this.cb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_sex.FormattingEnabled = true;
+            this.cb_sex.Location = new System.Drawing.Point(516, 21);
+            this.cb_sex.Name = "cb_sex";
+            this.cb_sex.Size = new System.Drawing.Size(72, 23);
+            this.cb_sex.TabIndex = 208;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(463, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 205;
+            this.label1.Text = "性别";
+            // 
+            // xingming
+            // 
+            this.xingming.AutoSize = true;
+            this.xingming.Location = new System.Drawing.Point(20, 24);
+            this.xingming.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xingming.Name = "xingming";
+            this.xingming.Size = new System.Drawing.Size(52, 15);
+            this.xingming.TabIndex = 101;
+            this.xingming.Text = "用户名";
+            // 
+            // txt_username
+            // 
+            this.txt_username.Location = new System.Drawing.Point(81, 19);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(132, 25);
+            this.txt_username.TabIndex = 201;
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(651, 18);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(100, 29);
+            this.btn_search.TabIndex = 11;
+            this.btn_search.Text = "查找";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // cx_yonghuxinxi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -414,11 +415,12 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "cx_yonghuxinxi";
             this.Text = "cx_yonghuxinxi";
+            this.Load += new System.EventHandler(this.cx_yonghuxinxi_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_yishengxinxi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_yonghuxinxi)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -443,7 +445,7 @@
         private System.Windows.Forms.Label labelshenfenzheng;
         private System.Windows.Forms.TextBox txt_contact;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgv_yishengxinxi;
+        private System.Windows.Forms.DataGridView dgv_yonghuxinxi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cb_sex;
         private System.Windows.Forms.Label label1;
