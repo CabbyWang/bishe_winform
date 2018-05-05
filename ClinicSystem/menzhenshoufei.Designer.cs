@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_ptid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dgv_yaopinxiangqing = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,14 @@
             this.panel1.Size = new System.Drawing.Size(744, 66);
             this.panel1.TabIndex = 0;
             // 
+            // txt_ptid
+            // 
+            this.txt_ptid.Location = new System.Drawing.Point(181, 19);
+            this.txt_ptid.Name = "txt_ptid";
+            this.txt_ptid.Size = new System.Drawing.Size(100, 25);
+            this.txt_ptid.TabIndex = 1;
+            this.txt_ptid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ptid_KeyPress);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -58,14 +66,6 @@
             this.label1.Size = new System.Drawing.Size(120, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "请输入医疗证号:";
-            // 
-            // txt_ptid
-            // 
-            this.txt_ptid.Location = new System.Drawing.Point(181, 19);
-            this.txt_ptid.Name = "txt_ptid";
-            this.txt_ptid.Size = new System.Drawing.Size(100, 25);
-            this.txt_ptid.TabIndex = 1;
-            this.txt_ptid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label14
             // 
@@ -106,9 +106,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(517, 385);
+            this.button1.Location = new System.Drawing.Point(496, 385);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
+            this.button1.Size = new System.Drawing.Size(96, 34);
             this.button1.TabIndex = 38;
             this.button1.Text = "确认收费";
             this.button1.UseVisualStyleBackColor = true;
