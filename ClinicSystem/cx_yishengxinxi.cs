@@ -70,6 +70,7 @@ namespace ClinicSystem
             tj.ShowDialog();
         }
 
+        // 双击单元格
         private void dgv_yishengxinxi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -77,10 +78,10 @@ namespace ClinicSystem
                 return;
             }
             txt_name2.Text = dgv_yishengxinxi.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cb_sex2.SelectedText = dgv_yishengxinxi.Rows[e.RowIndex].Cells[2].Value.ToString();
+            cb_sex2.Text = dgv_yishengxinxi.Rows[e.RowIndex].Cells[2].Value.ToString();
             txt_zhicheng.Text = dgv_yishengxinxi.Rows[e.RowIndex].Cells[3].Value.ToString();
-            cb_department2.SelectedText = dgv_yishengxinxi.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txt_ID_number.SelectedText = dgv_yishengxinxi.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cb_department2.Text = dgv_yishengxinxi.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txt_ID_number.Text = dgv_yishengxinxi.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
