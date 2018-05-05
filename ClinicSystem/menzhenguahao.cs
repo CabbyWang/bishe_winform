@@ -79,7 +79,7 @@ namespace ClinicSystem
             cb_guahaojibie.SelectedIndex = 0;
             
             // 计算门诊编号
-            String sql = "select id from registation";
+            String sql = "select id from registation order by id desc";
             int id;
             try
             {
