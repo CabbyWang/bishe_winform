@@ -45,13 +45,17 @@ namespace ClinicSystem
 
         private void cx_yishengxinxi_Load(object sender, EventArgs e)
         {
+            cb_sex.Items.Add("");
             cb_sex.Items.Add("男");
             cb_sex.Items.Add("女");
+            cb_sex2.Items.Add("");
             cb_sex2.Items.Add("男");
             cb_sex2.Items.Add("女");
             cb_sex.SelectedIndex = 0;
             cb_sex2.SelectedIndex = 0;
 
+            cb_department.Items.Add("");
+            Base.loadDepartment(cb_department);
             Base.loadDepartment(cb_department2);
         }
 
