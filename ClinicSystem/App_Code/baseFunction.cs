@@ -111,7 +111,17 @@ namespace ClinicSystem.App_Code
             string sql = "select DISTINCT name from department order by name desc";
             sqlHelper sh = new sqlHelper();
             DataSet ds = sh.GetDs(sql, "department");
-            cb.DataSource = ds.Tables["department"];
+            //DataTable dt = (DataTable)cb.DataSource;
+            //DataRow dr = dt.NewRow();
+            //dr[0] = "";
+            //dt.Rows.InsertAt(dr, 0);
+            //cb.DataSource = dt;
+            //cb.DataSource = ds.Tables["department"];
+            DataTable dt = ds.Tables["department"];
+            DataRow dr = dt.NewRow();
+            dr[0] = "";
+            dt.Rows.InsertAt(dr, 0);
+            cb.DataSource = dt;
             cb.DisplayMember = "name";
             cb.ValueMember = "name";
         }
@@ -126,7 +136,11 @@ namespace ClinicSystem.App_Code
             string sql = "select DISTINCT name from yaopin order by name desc";
             sqlHelper sh = new sqlHelper();
             DataSet ds = sh.GetDs(sql, "yaopinming");
-            cb.DataSource = ds.Tables["yaopinming"];
+            DataTable dt = ds.Tables["yaopinming"];
+            DataRow dr = dt.NewRow();
+            dr[0] = "";
+            dt.Rows.InsertAt(dr, 0);
+            cb.DataSource = dt;
             cb.DisplayMember = "name";
             cb.ValueMember = "name";
         }
@@ -142,6 +156,11 @@ namespace ClinicSystem.App_Code
             string sql = "select DISTINCT yaopinguige from yaopin where name = '"+yaopinming+"' order by yaopinguige desc";
             sqlHelper sh = new sqlHelper();
             DataSet ds = sh.GetDs(sql, "yaopinguige");
+            DataTable dt = ds.Tables["yaopinguige"];
+            DataRow dr = dt.NewRow();
+            dr[0] = "";
+            dt.Rows.InsertAt(dr, 0);
+            cb.DataSource = dt;
             cb.DataSource = ds.Tables["yaopinguige"];
             cb.DisplayMember = "yaopinguige";
             cb.ValueMember = "yaopinguige";
