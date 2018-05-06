@@ -94,7 +94,7 @@ namespace ClinicSystem
         private void btn_update_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dgv_yishengxinxi.Rows[dgv_yishengxinxi.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            string sql = "update operators set name = '"+txt_name2.Text+"', sex = '"+cb_sex2.SelectedText+"', zhicheng = '"+txt_zhicheng.Text+"', department = '"+cb_department2.SelectedText+"', ID_number = '"+txt_ID_number+"' where role = '1' and id = '"+id+"'";
+            string sql = "update operators set name = '"+txt_name2.Text+"', sex = '"+cb_sex2.Text+"', zhicheng = '"+txt_zhicheng.Text+"', department = '"+cb_department2.Text+"', ID_number = '"+txt_ID_number.Text+"' where role = '1' and id = '"+id+"'";
             Base.sql_update(sql);
         }
     }
