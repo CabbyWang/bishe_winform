@@ -82,5 +82,14 @@ namespace ClinicSystem
             }
             return "";
         }
+
+        private void guahaoxinxidengji_Load(object sender, EventArgs e)
+        {
+            // txt_id显示医疗证号
+            string sql = "select  id from bingrenxinxi order by id desc";
+            sqlHelper sh = new sqlHelper();
+            int id = Convert.ToInt32(sh.ReturnSql(sql)) + 1;
+            txt_id.Text = id.ToString();
+        }
     }
 }

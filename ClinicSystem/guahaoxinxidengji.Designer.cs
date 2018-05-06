@@ -36,6 +36,11 @@
             this.保存button = new System.Windows.Forms.Button();
             this.lb_biaotighxxdj = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_zhiye = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_minzu = new System.Windows.Forms.TextBox();
+            this.txt_jiguan = new System.Windows.Forms.TextBox();
+            this.txt_guoji = new System.Windows.Forms.TextBox();
             this.lb_minzu = new System.Windows.Forms.Label();
             this.dTP_birthday = new System.Windows.Forms.DateTimePicker();
             this.cb_hunfou = new System.Windows.Forms.ComboBox();
@@ -53,11 +58,6 @@
             this.lb_hunfou = new System.Windows.Forms.Label();
             this.lb_sex = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
-            this.txt_guoji = new System.Windows.Forms.TextBox();
-            this.txt_jiguan = new System.Windows.Forms.TextBox();
-            this.txt_minzu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_zhiye = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -157,6 +157,43 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // txt_zhiye
+            // 
+            this.txt_zhiye.Location = new System.Drawing.Point(535, 161);
+            this.txt_zhiye.Name = "txt_zhiye";
+            this.txt_zhiye.Size = new System.Drawing.Size(122, 25);
+            this.txt_zhiye.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(465, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "职业";
+            // 
+            // txt_minzu
+            // 
+            this.txt_minzu.Location = new System.Drawing.Point(535, 76);
+            this.txt_minzu.Name = "txt_minzu";
+            this.txt_minzu.Size = new System.Drawing.Size(122, 25);
+            this.txt_minzu.TabIndex = 25;
+            // 
+            // txt_jiguan
+            // 
+            this.txt_jiguan.Location = new System.Drawing.Point(298, 72);
+            this.txt_jiguan.Name = "txt_jiguan";
+            this.txt_jiguan.Size = new System.Drawing.Size(133, 25);
+            this.txt_jiguan.TabIndex = 24;
+            // 
+            // txt_guoji
+            // 
+            this.txt_guoji.Location = new System.Drawing.Point(100, 76);
+            this.txt_guoji.Name = "txt_guoji";
+            this.txt_guoji.Size = new System.Drawing.Size(133, 25);
+            this.txt_guoji.TabIndex = 23;
+            // 
             // lb_minzu
             // 
             this.lb_minzu.AutoSize = true;
@@ -175,6 +212,7 @@
             // 
             // cb_hunfou
             // 
+            this.cb_hunfou.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_hunfou.FormattingEnabled = true;
             this.cb_hunfou.Items.AddRange(new object[] {
             "是",
@@ -186,6 +224,7 @@
             // 
             // cb_sex
             // 
+            this.cb_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_sex.FormattingEnabled = true;
             this.cb_sex.Items.AddRange(new object[] {
             "男",
@@ -305,43 +344,6 @@
             this.lb_name.TabIndex = 0;
             this.lb_name.Text = "姓名";
             // 
-            // txt_guoji
-            // 
-            this.txt_guoji.Location = new System.Drawing.Point(100, 76);
-            this.txt_guoji.Name = "txt_guoji";
-            this.txt_guoji.Size = new System.Drawing.Size(133, 25);
-            this.txt_guoji.TabIndex = 23;
-            // 
-            // txt_jiguan
-            // 
-            this.txt_jiguan.Location = new System.Drawing.Point(298, 72);
-            this.txt_jiguan.Name = "txt_jiguan";
-            this.txt_jiguan.Size = new System.Drawing.Size(133, 25);
-            this.txt_jiguan.TabIndex = 24;
-            // 
-            // txt_minzu
-            // 
-            this.txt_minzu.Location = new System.Drawing.Point(535, 76);
-            this.txt_minzu.Name = "txt_minzu";
-            this.txt_minzu.Size = new System.Drawing.Size(122, 25);
-            this.txt_minzu.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(465, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 15);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "职业";
-            // 
-            // txt_zhiye
-            // 
-            this.txt_zhiye.Location = new System.Drawing.Point(535, 161);
-            this.txt_zhiye.Name = "txt_zhiye";
-            this.txt_zhiye.Size = new System.Drawing.Size(122, 25);
-            this.txt_zhiye.TabIndex = 27;
-            // 
             // guahaoxinxidengji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -353,6 +355,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "guahaoxinxidengji";
             this.Text = "guahaoxinxidengji";
+            this.Load += new System.EventHandler(this.guahaoxinxidengji_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
