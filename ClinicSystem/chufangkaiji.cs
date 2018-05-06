@@ -69,7 +69,7 @@ namespace ClinicSystem
             int cfid = Convert.ToInt32(txt_id.Text.ToString().Trim());
             float zongjine = 0;
             int i;
-            for (i = 0; i < dgv_chufangmingxi.RowCount; i++)
+            for (i = 0; i < dgv_chufangmingxi.RowCount - 1; i++)
             {
                 string yaopinming = dgv_chufangmingxi.Rows[i].Cells[2].Value.ToString();
                 string yaopinguige = dgv_chufangmingxi.Rows[i].Cells[3].Value.ToString();
