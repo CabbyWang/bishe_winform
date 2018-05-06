@@ -33,6 +33,14 @@ namespace ClinicSystem
                 MessageBox.Show("身份证号码不能为空！");
                 return;
             }
+
+            string in_sql = "select * from bingrenxinxi where ID_number = '" + txt_ID_number.Text.ToString() + "'";
+            sqlHelper sh = new sqlHelper();
+            if (!string.IsNullOrEmpty(sh.ReturnSql(in_sql))) {
+                MessageBox.Show("该身份证号已经登记!!");
+                return;
+            }
+
             // 验证电话号码
             if (!Valid.IsContact(txt_contact.Text))
             {
