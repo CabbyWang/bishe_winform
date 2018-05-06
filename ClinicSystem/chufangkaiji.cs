@@ -48,7 +48,7 @@ namespace ClinicSystem
                     return;
                 }
 
-                // 挂号编号
+                // 挂号编号 
                 txt_guahaobianhao2.Text = txt_guahaobianhao.Text;
 
                 // 显示患者基本信息
@@ -130,11 +130,11 @@ namespace ClinicSystem
         private void btn_addmingxi_Click(object sender, EventArgs e)
         {
             // 添加处方明细
-            string add_sql = "insert into chufangmingxi(cfid, yaopinmingcheng, yaopinguige, danciyongliang, meiricishu, yongyaofangshi, shuliang) values('" + id + "', '" + cb_yaopinmingcheng.Text.ToString().Trim() + "', '" + cb_yaopinguige.Text.ToString().Trim() + "', '" + txt_danciyongliang.Text.ToString().Trim() + "', '" + txt_meiricishu.Text.ToString().Trim() + "', '" + cb_yongyaofangshi.Text.ToString().Trim() + "', '" + Convert.ToDouble(txt_yaopinshuliang.Text.ToString()) + "')";
+            string add_sql = "insert into chufangmingxi(cfid, yaopinmingcheng, yaopinguige, danciyongliang, meiricishu, yongyaofangshi, shuliang) values('" + txt_id.Text.ToString() + "', '" + cb_yaopinmingcheng.Text.ToString().Trim() + "', '" + cb_yaopinguige.Text.ToString().Trim() + "', '" + txt_danciyongliang.Text.ToString().Trim() + "', '" + txt_meiricishu.Text.ToString().Trim() + "', '" + cb_yongyaofangshi.Text.ToString().Trim() + "', '" + Convert.ToDouble(txt_yaopinshuliang.Text.ToString()) + "')";
             Base.sql_insert(add_sql);
 
             // 刷新处方明细表
-            string sql = "select * from chufangmingxi where cfid = '"+id+"'";
+            string sql = "select * from chufangmingxi where cfid = '"+txt_id.Text.ToString()+"'";
             sqlHelper sh = new sqlHelper();
             sh.BindDgv(dgv_chufangmingxi, sql, "chufangmingxi");
         }
