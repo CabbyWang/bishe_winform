@@ -34,7 +34,8 @@ namespace ClinicSystem
                 return;
             }
             // 验证电话号码
-            if (!Valid.IsContact(txt_ID_number.Text)) {
+            if (!Valid.IsContact(txt_contact.Text))
+            {
                 MessageBox.Show("请输入有效的联系方式!");
                 txt_contact.Focus();
                 return;
