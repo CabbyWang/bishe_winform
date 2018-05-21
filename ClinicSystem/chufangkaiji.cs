@@ -61,39 +61,49 @@ namespace ClinicSystem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_guahaobianhao.Text.ToString().Trim()))
+            {
+                MessageBox.Show("请输入挂号编号!!");
+                return;
+            }
+            // 添加到处方明细表
+            sqlHelper sh = new sqlHelper();
+            int row_count = dgv_chufangmingxi.Rows.Count - 1;
+            int cfid = Convert.ToInt32(txt_id.Text.ToString().Trim());
+            float zongjine = 0;
+            for (int i = 0; i < row_count; i++)
+            {
+                string yaopinmingcheng = dgv_chufangmingxi.Rows[i].Cells[0].Value.ToString();
+                string yaopinguige = dgv_chufangmingxi.Rows[i].Cells[1].Value.ToString();
+                string shuliang = dgv_chufangmingxi.Rows[i].Cells[2].Value.ToString();
+                string danciyongliang = dgv_chufangmingxi.Rows[i].Cells[3].Value.ToString();
+                string meiricishu = dgv_chufangmingxi.Rows[i].Cells[4].Value.ToString();
+                string yongyaofangshi = dgv_chufangmingxi.Rows[i].Cells[5].Value.ToString();
+                string add_sql = "insert into chufangmingxi(cfid, yaopinmingcheng, yaopinguige, danciyongliang, meiricishu, yongyaofangshi, shuliang) values('" + cfid + "', '" + yaopinmingcheng + "', '" + yaopinguige + "', '" + danciyongliang + "', '" + meiricishu + "', '" + yongyaofangshi + "', '" + shuliang + "')";
+                sh.ExcuteNonQuery(add_sql);
+                float price;
+                // 获取药品价格
+                string price_sql = "select DISTINCT price from yaopin where name = '" + yaopinmingcheng + "' and yaopinguige = '" + yaopinguige + "'";
+                try
+                {
+                    price = float.Parse(sh.ReturnSql(price_sql));
+                }
+                catch
+                {
+                    price = 0;
+                }
+
+                float row_price = price * Convert.ToInt32(shuliang);
+                zongjine += row_price;
+            }
+
             // 添加处方
             String sql = "insert into chufang(patientid, guahaoid, doctor) values('"+patientid+"', '"+txt_guahaobianhao2.Text.ToString().Trim()+"', '"+cur_doctor+"')";
             Base.sql_insert(sql);
 
             // 添加收费
-            int cfid = Convert.ToInt32(txt_id.Text.ToString().Trim());
-            float zongjine = 0;
-            int i;
-            for (i = 0; i < dgv_chufangmingxi.RowCount - 1; i++)
-            {
-                string yaopinming = dgv_chufangmingxi.Rows[i].Cells[2].Value.ToString();
-                string yaopinguige = dgv_chufangmingxi.Rows[i].Cells[3].Value.ToString();
-                float price;
-                // 获取药品价格
-                string price_sql = "select DISTINCT price from yaopin where name = '"+yaopinming+"' and yaopinguige = '"+yaopinguige+"'";
-                try
-                {
-                    sqlHelper sh = new sqlHelper();
-                    price = float.Parse(sh.ReturnSql(price_sql));
-                }
-                catch {
-                    price = 0;
-                }
-
-                // 药品数量
-                int count = Convert.ToInt32(dgv_chufangmingxi.Rows[i].Cells[7].Value.ToString());
-
-                // 计算单行金额
-                float row_price = price * count;
-                zongjine += row_price;
-            }
             string sf_sql = "insert into shoufei(patientid, cfid, zongjine) values('" + patientid + "', '" + cfid + "', '" + zongjine + "')";
-            Base.sql_insert(sf_sql);
+            sh.ExcuteNonQuery(sf_sql);
         }
 
         private void chufangkaiji_Load(object sender, EventArgs e)
@@ -119,6 +129,8 @@ namespace ClinicSystem
                 id = 0;
             }
             txt_id.Text = id.ToString();
+
+            dgv_chufangmingxi.AutoGenerateColumns = false;
         }
 
         private void cb_yaopinmingcheng_TextChanged(object sender, EventArgs e)
@@ -130,13 +142,21 @@ namespace ClinicSystem
         private void btn_addmingxi_Click(object sender, EventArgs e)
         {
             // 添加处方明细
-            string add_sql = "insert into chufangmingxi(cfid, yaopinmingcheng, yaopinguige, danciyongliang, meiricishu, yongyaofangshi, shuliang) values('" + txt_id.Text.ToString() + "', '" + cb_yaopinmingcheng.Text.ToString().Trim() + "', '" + cb_yaopinguige.Text.ToString().Trim() + "', '" + txt_danciyongliang.Text.ToString().Trim() + "', '" + txt_meiricishu.Text.ToString().Trim() + "', '" + cb_yongyaofangshi.Text.ToString().Trim() + "', '" + Convert.ToDouble(txt_yaopinshuliang.Text.ToString()) + "')";
-            Base.sql_insert(add_sql);
+            int index = dgv_chufangmingxi.Rows.Add();
+            dgv_chufangmingxi.Rows[index].Cells[0].Value = cb_yaopinmingcheng.Text.ToString().Trim();
+            dgv_chufangmingxi.Rows[index].Cells[1].Value = cb_yaopinguige.Text.ToString().Trim();
+            dgv_chufangmingxi.Rows[index].Cells[2].Value = txt_yaopinshuliang.Text.ToString().Trim();
+            dgv_chufangmingxi.Rows[index].Cells[3].Value = txt_danciyongliang.Text.ToString().Trim();
+            dgv_chufangmingxi.Rows[index].Cells[4].Value = txt_meiricishu.Text.ToString().Trim();
+            dgv_chufangmingxi.Rows[index].Cells[5].Value = cb_yongyaofangshi.Text.ToString().Trim();
+        }
 
-            // 刷新处方明细表
-            string sql = "select * from chufangmingxi where cfid = '"+txt_id.Text.ToString()+"'";
-            sqlHelper sh = new sqlHelper();
-            sh.BindDgv(dgv_chufangmingxi, sql, "chufangmingxi");
+        private void btn_muban_Click(object sender, EventArgs e)
+        {
+            muban tm = new muban();
+            if (tm.ShowDialog() == DialogResult.OK) {
+                dgv_chufangmingxi.DataSource = tm.return_ds.Tables[0];
+            }
         }
     }
 }

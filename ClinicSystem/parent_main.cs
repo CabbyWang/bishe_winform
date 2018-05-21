@@ -199,5 +199,16 @@ namespace ClinicSystem
             menzhenshoufei sf = new menzhenshoufei();
             sf.Show();
         }
+
+        private void tm_日结_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tm_组套管理_Click(object sender, EventArgs e)
+        {
+            tj_muban tm = new tj_muban();
+            tm.ShowDialog();
+        }
     }
 }

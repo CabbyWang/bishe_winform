@@ -140,11 +140,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rijie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rijie.Designer.cs">
+      <DependentUpon>rijie.cs</DependentUpon>
+    </Compile>
     <Compile Include="tj_keshixinxi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tj_keshixinxi.Designer.cs">
       <DependentUpon>tj_keshixinxi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muban.Designer.cs">
+      <DependentUpon>muban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tj_muban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tj_muban.Designer.cs">
+      <DependentUpon>tj_muban.cs</DependentUpon>
     </Compile>
     <Compile Include="tj_yishengxinxi.cs">
       <SubType>Form</SubType>
@@ -236,8 +254,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rijie.resx">
+      <DependentUpon>rijie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tj_keshixinxi.resx">
       <DependentUpon>tj_keshixinxi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muban.resx">
+      <DependentUpon>muban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tj_muban.resx">
+      <DependentUpon>tj_muban.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tj_yishengxinxi.resx">
       <DependentUpon>tj_yishengxinxi.cs</DependentUpon>

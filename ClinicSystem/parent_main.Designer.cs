@@ -92,7 +92,7 @@
             // tm_修改密码
             // 
             this.tm_修改密码.Name = "tm_修改密码";
-            this.tm_修改密码.Size = new System.Drawing.Size(181, 26);
+            this.tm_修改密码.Size = new System.Drawing.Size(144, 26);
             this.tm_修改密码.Text = "修改密码";
             this.tm_修改密码.Click += new System.EventHandler(this.tm_修改密码_Click);
             // 
@@ -108,14 +108,14 @@
             // tm_医生信息查询
             // 
             this.tm_医生信息查询.Name = "tm_医生信息查询";
-            this.tm_医生信息查询.Size = new System.Drawing.Size(181, 26);
+            this.tm_医生信息查询.Size = new System.Drawing.Size(174, 26);
             this.tm_医生信息查询.Text = "医生信息查询";
             this.tm_医生信息查询.Click += new System.EventHandler(this.tm_医生信息查询_Click);
             // 
             // tm_添加医生
             // 
             this.tm_添加医生.Name = "tm_添加医生";
-            this.tm_添加医生.Size = new System.Drawing.Size(181, 26);
+            this.tm_添加医生.Size = new System.Drawing.Size(174, 26);
             this.tm_添加医生.Text = "医生信息添加";
             this.tm_添加医生.Click += new System.EventHandler(this.tm_添加医生_Click);
             // 
@@ -154,14 +154,14 @@
             // tm_科室信息查询
             // 
             this.tm_科室信息查询.Name = "tm_科室信息查询";
-            this.tm_科室信息查询.Size = new System.Drawing.Size(181, 26);
+            this.tm_科室信息查询.Size = new System.Drawing.Size(174, 26);
             this.tm_科室信息查询.Text = "科室信息查询";
             this.tm_科室信息查询.Click += new System.EventHandler(this.tm_科室信息查询_Click);
             // 
             // tm_科室信息添加
             // 
             this.tm_科室信息添加.Name = "tm_科室信息添加";
-            this.tm_科室信息添加.Size = new System.Drawing.Size(181, 26);
+            this.tm_科室信息添加.Size = new System.Drawing.Size(174, 26);
             this.tm_科室信息添加.Text = "科室信息添加";
             this.tm_科室信息添加.Click += new System.EventHandler(this.tm_科室信息添加_Click);
             // 
@@ -178,21 +178,21 @@
             // tm_挂号登记
             // 
             this.tm_挂号登记.Name = "tm_挂号登记";
-            this.tm_挂号登记.Size = new System.Drawing.Size(181, 26);
+            this.tm_挂号登记.Size = new System.Drawing.Size(174, 26);
             this.tm_挂号登记.Text = "挂号登记";
             this.tm_挂号登记.Click += new System.EventHandler(this.tm_挂号登记_Click);
             // 
             // tm_门诊挂号
             // 
             this.tm_门诊挂号.Name = "tm_门诊挂号";
-            this.tm_门诊挂号.Size = new System.Drawing.Size(181, 26);
+            this.tm_门诊挂号.Size = new System.Drawing.Size(174, 26);
             this.tm_门诊挂号.Text = "门诊挂号";
             this.tm_门诊挂号.Click += new System.EventHandler(this.tm_门诊挂号_Click);
             // 
             // tm_挂号信息查询
             // 
             this.tm_挂号信息查询.Name = "tm_挂号信息查询";
-            this.tm_挂号信息查询.Size = new System.Drawing.Size(181, 26);
+            this.tm_挂号信息查询.Size = new System.Drawing.Size(174, 26);
             this.tm_挂号信息查询.Text = "挂号信息查询";
             this.tm_挂号信息查询.Click += new System.EventHandler(this.tm_挂号信息查询_Click);
             // 
@@ -225,6 +225,7 @@
             this.tm_组套管理.Name = "tm_组套管理";
             this.tm_组套管理.Size = new System.Drawing.Size(181, 26);
             this.tm_组套管理.Text = "组套管理";
+            this.tm_组套管理.Click += new System.EventHandler(this.tm_组套管理_Click);
             // 
             // tm_收费
             // 
@@ -239,21 +240,22 @@
             // tm_门诊收费登记
             // 
             this.tm_门诊收费登记.Name = "tm_门诊收费登记";
-            this.tm_门诊收费登记.Size = new System.Drawing.Size(181, 26);
+            this.tm_门诊收费登记.Size = new System.Drawing.Size(174, 26);
             this.tm_门诊收费登记.Text = "门诊收费";
             this.tm_门诊收费登记.Click += new System.EventHandler(this.tm_门诊收费_Click);
             // 
             // tm_门诊收费查询
             // 
             this.tm_门诊收费查询.Name = "tm_门诊收费查询";
-            this.tm_门诊收费查询.Size = new System.Drawing.Size(181, 26);
+            this.tm_门诊收费查询.Size = new System.Drawing.Size(174, 26);
             this.tm_门诊收费查询.Text = "门诊收费查询";
             // 
             // tm_日结
             // 
             this.tm_日结.Name = "tm_日结";
-            this.tm_日结.Size = new System.Drawing.Size(181, 26);
+            this.tm_日结.Size = new System.Drawing.Size(174, 26);
             this.tm_日结.Text = "日结";
+            this.tm_日结.Click += new System.EventHandler(this.tm_日结_Click);
             // 
             // tm_关于
             // 
