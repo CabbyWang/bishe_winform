@@ -24,13 +24,16 @@ namespace ClinicSystem
         }
 
         private sqlHelper sh = new sqlHelper();
-        private int id; 
+        private int id;
+        private int patientid;
 
         private void button1_Click(object sender, EventArgs e)
         {
             // 收费, 状态shifoushoufei改变
             string sql = "update shoufei set shifoushoufei = 1 where id = '"+id+"'";
             Base.sql_update(sql);
+
+            update_dgv();
         }
 
         private void txt_ptid_KeyPress(object sender, KeyPressEventArgs e)
@@ -43,7 +46,7 @@ namespace ClinicSystem
                     MessageBox.Show("请输入医疗证号!!");
                     return;
                 }
-                int patientid = Convert.ToInt32(txt_ptid.Text.ToString().Trim());
+                patientid = Convert.ToInt32(txt_ptid.Text.ToString().Trim());
                 // 获取id
                 string id_sql = "select id from shoufei where shifoushoufei = '0' and patientid = '" + patientid + "'";
                 string result = sh.ReturnSql(id_sql);
@@ -51,19 +54,30 @@ namespace ClinicSystem
                     MessageBox.Show("该用户没有收费项!!");
                     return;
                 }
-                int id = Convert.ToInt32(result); 
+                id = Convert.ToInt32(result); 
                 // 总金额
                 string zjine_sql = "select zongjine from shoufei where shifoushoufei = '0' and patientid = '" + patientid + "'";
                 lb_zongjine.Text = sh.ReturnSql(zjine_sql);
 
-                //  获取cfid(处方id)
-                string sql = "select cfid from shoufei where shifoushoufei = '0' and patientid = '"+patientid+"'";
-                int cfid = Convert.ToInt32(sh.ReturnSql(sql));
-
-                // 绑定dgv
-                string sel_sql = "select * from chufangmingxi where cfid = '"+cfid+"'";
-                sh.BindDgv(dgv_yaopinxiangqing, sel_sql, "yaopinmingxi");
+                update_dgv();
             }
+        }
+
+        // 刷新药品明细表
+        private void update_dgv() {
+            //  获取cfid(处方id)
+            string sql = "select cfid from shoufei where shifoushoufei = '0' and patientid = '" + patientid + "'";
+            int cfid;
+            try {
+                cfid = Convert.ToInt32(sh.ReturnSql(sql));
+            }
+            catch {
+                return;
+            }
+
+            // 绑定dgv
+            string sel_sql = "select * from chufangmingxi where cfid = '" + cfid + "'";
+            sh.BindDgv(dgv_yaopinxiangqing, sel_sql, "yaopinmingxi");
         }
     }
 }
