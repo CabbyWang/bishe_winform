@@ -131,5 +131,10 @@ namespace ClinicSystem
             }
             txt_ID_number.Text = "";
         }
+
+        private void cb_department_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            update_cb_doctor();
+        }
     }
 }
