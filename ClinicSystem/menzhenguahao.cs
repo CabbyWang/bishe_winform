@@ -53,28 +53,25 @@ namespace ClinicSystem
             }
 
         }
-
+        private sqlHelper sh = new sqlHelper();
         private void menzhenguahao_Load(object sender, EventArgs e)
         {
-            sqlHelper sh = new sqlHelper();
+            
             // 挂号科室
-            string ks_sql = "select name from department";
-            DataSet ks_ds = sh.GetDs(ks_sql, "keshi");
-            cb_department.DataSource = ks_ds.Tables["keshi"];
-            cb_department.DisplayMember = "name";
-            cb_department.ValueMember = "name";
+            Base.loadDepartment(cb_department);
+            //string ks_sql = "select name from department";
+            //DataSet ks_ds = sh.GetDs(ks_sql, "keshi");
+            //cb_department.DataSource = ks_ds.Tables["keshi"];
+            //cb_department.DisplayMember = "name";
+            //cb_department.ValueMember = "name";
 
             // 挂号医生
-            string ys_sql = "select name from operators where role = 1";
-            DataSet ys_ds = sh.GetDs(ys_sql, "yisheng");
-            cb_doctor.DataSource = ys_ds.Tables["yisheng"];
-            cb_doctor.DisplayMember = "name";
-            cb_doctor.ValueMember = "name";
+            update_cb_doctor();
 
             cb_sex.SelectedIndex = 0;
             cb_ismarried.SelectedIndex = 0;
             cb_fufeileixing.SelectedIndex = 0;
-            cb_doctor.SelectedIndex = 0;
+            //cb_doctor.SelectedIndex = 0;
             cb_department.SelectedIndex = 0;
             cb_guahaojibie.SelectedIndex = 0;
             
@@ -90,6 +87,14 @@ namespace ClinicSystem
             }
             txt_menzhenbianhao.Text = (id + 1).ToString();
 
+        }
+
+        private void update_cb_doctor() {
+            string ys_sql = "select name from operators where role = 1 and department = '" + cb_department.Text.ToString().Trim() + "'";
+            DataSet ys_ds = sh.GetDs(ys_sql, "yisheng");
+            cb_doctor.DataSource = ys_ds.Tables["yisheng"];
+            cb_doctor.DisplayMember = "name";
+            cb_doctor.ValueMember = "name";
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
